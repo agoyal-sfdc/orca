@@ -56,6 +56,9 @@ public final class DeployManifestTask extends AbstractCloudProviderAwareTask imp
   private ImmutableMap<String, Map> getOperation(Stage stage) {
     DeployManifestContext context = stage.mapTo(DeployManifestContext.class);
 
+    // throw new UncheckedIOException(new IOException("This should be alright"));
+    System.out.println("We made it fam.");
+
     Map<String, Object> task = new HashMap<>(stage.getContext());
 
     task.put("source", "text");
